@@ -12,8 +12,6 @@ Person.prototype.greet = function() {
     console.log(`Hello ${this.name}, you are ${this.age} years old`)
 };
 
-// olivier.greet();
-
 const Employee = function() {
     Person.call(this);
     this.title = "web developper";
@@ -25,7 +23,10 @@ Employee.prototype.greet2 = function() {
 
 util.inherits(Employee, Person);
 
-const newEmployee = new Employee();
-//newEmployee.greet();
-newEmployee.greet2();
+const olivierTitle = new Employee();
+olivier.greet();
+olivierTitle.greet2();
 
+console.log(olivierTitle.__proto__);
+console.log(olivierTitle.__proto__.__proto__);
+console.log(olivierTitle.__proto__.__proto__.__proto__);
