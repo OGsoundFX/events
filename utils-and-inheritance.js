@@ -1,20 +1,20 @@
 const util = require('util');
 
-const Person = function() {
-    this.name = "olivier",
-    this.age = 25
+const Person = function(name, age) {
+    this.name = name,
+    this.age = age
 };
 
-const olivier = new Person;
+const olivier = new Person("olivier", 25);
 
 
 Person.prototype.greet = function() {
     console.log(`Hello ${this.name}, you are ${this.age} years old`)
 };
 
-const Employee = function() {
+const Employee = function(title) {
     Person.call(this);
-    this.title = "web developper";
+    this.title = title;
 };
 
 Employee.prototype.greet2 = function() {
@@ -23,7 +23,7 @@ Employee.prototype.greet2 = function() {
 
 util.inherits(Employee, Person);
 
-const olivierTitle = new Employee();
+const olivierTitle = new Employee("web developper");
 olivier.greet();
 olivierTitle.greet2();
 
