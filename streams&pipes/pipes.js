@@ -10,6 +10,8 @@ readable.pipe(writable);
 // Creating a compressed file if a gzip format file.
 let zlib = require('zlib');
 let gzip = zlib.createGzip();
+// creating a gzip variable, which is empty and serve as an intermediary
+// before actually storing the information in the atuall .gz file
 
 const compressed = fs.createWriteStream(`${__dirname}/compressed.gz`);
 
